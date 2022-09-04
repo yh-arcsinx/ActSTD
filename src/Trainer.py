@@ -95,11 +95,11 @@ class Trainer(object):
         self.dis_loss = nn.BCELoss(reduction='mean').to(self.device)
 
     def data_loader(self,num=None):
-        t0, t1 = map(lambda x: utils.cast(x, self.device), utils.get_t0_t1(self.args.data))
+        t0, t1 = map(lambda x: utils.cast(x, self.device), utils.get_t0_t1('Tencent')) 
 
-        train_set = load_data(self.args.data, split="train",num = self.args.num_data,args=self.args)
-        val_set = load_data(self.args.data, split="val",num = self.args.num_data,args=self.args)
-        test_set = load_data(self.args.data, split="test",num = self.args.num_data,args=self.args)
+        # train_set = load_data(self.args.data, split="train",num = self.args.num_data,args=self.args)
+        # val_set = load_data(self.args.data, split="val",num = self.args.num_data,args=self.args)
+        # test_set = load_data(self.args.data, split="test",num = self.args.num_data,args=self.args)
 
         train_epoch_iter = EpochBatchIterator(
         dataset=train_set,
@@ -256,7 +256,7 @@ class Trainer(object):
     def Train(self):
 
         t0,t1,train_epoch_iter,val_loader,test_loader,train_set, test_set = self.data_loader()
-
+        #t0=0 t1=31
         self.t0, self.t1 = t0, t1
         self.train_set = train_set
 

@@ -1,5 +1,6 @@
 import argparse
 
+
 parser = argparse.ArgumentParser(description='test')
 
 parser.add_argument('--sparse', action='store_true', default=False, help='GAT with sparse version or not.')
@@ -14,4 +15,4 @@ print(args.seed)
 print(args.epochs)
 print(args.tpp)
 print(args.tpp_cond)
-#python test.py --tpp_nocond是用来激活或者不激活 在代码里面他叫tpp_cond
+# python test.py --tpp_nocond是用来激活或者不激活 在代码里面他叫tpp_cond
